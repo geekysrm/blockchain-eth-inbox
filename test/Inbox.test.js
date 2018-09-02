@@ -21,4 +21,13 @@ describe("Inbox", () => {
     //we are checking above if inbox.options.address is defined and is truthy
     // presence of an address where the contract is deployed ensures that the contract has been deployed to the network, so we check for the presence of an address
   });
+
+  it("has a default message", async () => {
+    const message = await inbox.methods.message().call();
+    // 'methods' contains all public functions of our contract
+    //above line is calling the message fn.
+    // the () after message contain all arguments the message fn. might require
+    // the () after call is used to customize the transaction that we are attempting to send out to the network
+    assert.equal(message, "Hi there!");
+  });
 });
