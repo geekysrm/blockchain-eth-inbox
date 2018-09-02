@@ -17,6 +17,8 @@ beforeEach(async () => {
 
 describe("Inbox", () => {
   it("deploys a contract", () => {
-    console.log(inbox);
+    assert.ok(inbox.options.address);
+    //we are checking above if inbox.options.address is defined and is truthy
+    // presence of an address where the contract is deployed ensures that the contract has been deployed to the network, so we check for the presence of an address
   });
 });
